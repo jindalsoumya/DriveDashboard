@@ -14,6 +14,9 @@ class DayNav extends Component{
     render() {
         return (
             <Container className = "daynav-container">
+                <p>
+                    Parent element needs to be responsive
+                </p>
                 {date}  -  {time}
                 <br>
                 </br>

@@ -6,7 +6,11 @@ import './TallyStyling.css'
 import data from './data.json'
 
 var totalDist = 0;
-var i = 0;
+var avgSpeed = 0;
+var avgTime = 0;
+var gallon = 0;
+var price = 0;
+var carbon = 0;
 
 class Tally extends Component{
     render() {
@@ -15,29 +19,13 @@ class Tally extends Component{
                 <Grid container spacing={3}>
                     <Grid item xs={6} sm={3}>
                         <span className = "tally-val">
-                            {console.log(data.geometry.coordinates.length)}
-                            {/* for(i = 0; i<5; i++) */}
-                            
-                            for(i in data.geometry.coordinates)
-                            {
-                                totalDist = totalDist + (getDistance({latitude: data.geometry.coordinates[i][0], longitude: data.geometry.coordinates[i][1]},{latitude: data.geometry.coordinates[i+1][0], longitude: data.geometry.coordinates[i+1][1]}))
-                            }
-                            {/* {data.geometry.coordinates.map((item, index) => {
-                                    return(
-                                        {item.}
-                                    )
-                                })}
-                            {/* {this.state.person.result.map((item, index) => {
-                                return ( */}
-                                    {/* <div>
-                                            <Card className = "cards-card" keyM = {index}>
-                                                        <p className = "cards-abouttext"> {item.AboutMe} </p>
-                                            </Card>
-                                    </div> */}
-                                {/* )
-                            })} */}
-                            {/* {data.geometry.coordinates[0][0]} */}
-                            {/* {getDistance({ latitude: 51.5103, longitude: 7.49347 },{ latitude: "51° 31' N", longitude: "7° 28' E" })} */}
+                            {data.geometry.coordinates.map((item, index, element) => {
+                                if(index < (data.geometry.coordinates.length-1))
+                                    {
+                                        totalDist = totalDist + getDistance({ latitude: item[1], longitude: item[0] },{ latitude: element[index+1][1], longitude: element[index+1][0]});
+                                    }
+                            })}
+                            {totalDist = totalDist * 0.0006}
                         </span>    
                         <br>
                         </br>
@@ -45,7 +33,10 @@ class Tally extends Component{
                     </Grid>
                     <Grid item xs={6} sm={3}>
                         <span className = "tally-val">
-                        23
+                            {data.segment_stats.data.map((item, index) => {
+                                avgSpeed = (avgSpeed + item.speed_mph);
+                            })}
+                            {avgSpeed = parseFloat((avgSpeed / data.segment_stats.data.length)).toFixed(2)}
                         </span>  
                         <br>
                         </br>
@@ -53,17 +44,27 @@ class Tally extends Component{
                     </Grid>
                     <Grid item xs={6} sm={3}>
                         <span className = "tally-val">
-                        23
+                            {avgTime = parseFloat(((totalDist / avgSpeed)*60)).toFixed(2)}
                         </span>  
                         <br>
                         </br>
                         min
                     </Grid>
                 </Grid>
-                <Grid container spacing={2}>
+                <Grid container spacing={3}>
                     <Grid item xs={6} sm={3}>
                         <span className = "tally-val">
-                        23
+                            {/* Assume fuel efficiency is 25 mpg */}
+                            {gallon = parseFloat((totalDist / 25)).toFixed(2)}
+                        </span>  
+                        <br>
+                        </br>
+                        gallons
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                        <span className = "tally-val">
+                            {/* Assume fuel price is $3 */}
+                            {price = gallon * 3}
                         </span>  
                         <br>
                         </br>
@@ -71,11 +72,11 @@ class Tally extends Component{
                     </Grid>
                     <Grid item xs={6} sm={3}>
                         <span className = "tally-val">
-                        23
+                            {carbon = parseFloat((gallon * 12.13)).toFixed(2)}
                         </span>  
                         <br>
                         </br>
-                        lbs carbon
+                        kg carbon
                     </Grid>
                 </Grid>
             </Container>
