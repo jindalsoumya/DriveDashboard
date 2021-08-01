@@ -76,7 +76,7 @@ class Tally extends Component{
                         </span>  
                         <br>
                         </br>
-                        kg carbon
+                        CO2
                     </Grid>
                 </Grid>
             </Container>

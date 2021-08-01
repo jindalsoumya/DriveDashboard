@@ -1,3 +1,16 @@
 .cards-container{
     margin: 10px;
 }
+
+.cards-title{
+    font-weight: bold;
+}
+
+.cards-card{
+    margin-top: 10px;
+}
+
+.cards-image{
+    width: 50%;
+    height: 50%;
+}
