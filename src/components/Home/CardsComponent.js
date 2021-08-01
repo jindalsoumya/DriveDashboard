@@ -100,10 +100,10 @@ class Cards extends Component{
                             <Grid item xs={4}>
                                 <img src = {fast} className = "cards-image"></img>
                             </Grid>
-                            <Grid item xs={8}>
+                            <Grid item xs={8} className = "card-head">
                                 Pushing the metal
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} className = "card-desc">
                                 You rapidly accelerated {acc} times in your trip.
                             </Grid>
                         </Grid>
@@ -118,10 +118,10 @@ class Cards extends Component{
                             <Grid item xs={4}>
                                 <img src = {stop} className = "cards-image"></img>
                             </Grid>
-                            <Grid item xs={8}>
+                            <Grid item xs={8} className = "card-head">
                                 Brakes make tear
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} className = "card-desc">
                                 You braked hard {brake} times in your trip.
                             </Grid>
                         </Grid>

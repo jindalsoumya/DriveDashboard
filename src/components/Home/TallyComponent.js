@@ -29,7 +29,7 @@ class Tally extends Component{
                         </span>    
                         <br>
                         </br>
-                        miles
+                        <div className = "label">miles</div>
                     </Grid>
                     <Grid item xs={4}>
                         <span className = "tally-val">
@@ -40,7 +40,7 @@ class Tally extends Component{
                         </span>  
                         <br>
                         </br>
-                        mph
+                         <div className = "label">mph</div>
                     </Grid>
                     <Grid item xs={4}>
                         <span className = "tally-val">
@@ -48,7 +48,7 @@ class Tally extends Component{
                         </span>  
                         <br>
                         </br>
-                        min
+                        <div className = "label">min</div>
                     </Grid>
                 </Grid>
                 <Grid container className = "tally-container">
@@ -59,7 +59,7 @@ class Tally extends Component{
                         </span>  
                         <br>
                         </br>
-                        gallons
+                        <div className = "label">gallons</div>
                     </Grid>
                     <Grid item xs={4}>
                         <span className = "tally-val">
@@ -68,7 +68,7 @@ class Tally extends Component{
                         </span>  
                         <br>
                         </br>
-                        dollars
+                        <div className = "label">dollars</div>
                     </Grid>
                     <Grid item xs={4}>
                         <span className = "tally-val">
@@ -76,7 +76,7 @@ class Tally extends Component{
                         </span>  
                         <br>
                         </br>
-                        CO2
+                        <div className = "label">CO2</div>
                     </Grid>
                 </Grid>
             </Container>
