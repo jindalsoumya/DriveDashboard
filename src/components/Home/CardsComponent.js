@@ -48,7 +48,7 @@ IconContainer.propTypes = {
   
 var acc = 0;
 var brake = 0;
-var iconval = 5;
+var iconval = 0;
 
 class Cards extends Component{
     render() {
@@ -76,35 +76,21 @@ class Cards extends Component{
                     }
                 })}
                 <div>
-
-                {iconval ? (
-                    console.log("Hello")
-                ) : (
-                    console.log("No Hello")
-                )}
-                    {/* if(acc+brake > 10)
-                    {
-                        iconval = 4
-                    }
-                    else if((acc+brake) > 20)
-                    {
-                        iconval = 3
-                    }
-                    else if((acc+brake) > 30)
-                    {
-                        iconval = 2
-                    }
-                    else if ({acc+brake} > 40)
-                    {
-                        iconval = 1
-                    }
-                    else if ((acc+brake) > 50)
-                    {
-                        iconval = 0
-                    } */}
                     <Rating
                     name="customized-icons"
-                    value = {iconval}
+                    value = {(acc+brake) > 100 ? (
+                        iconval = 0
+                    ) : (acc+brake) > 80 ? (
+                        iconval = 1
+                    ) : (acc+brake) > 60 ? (
+                        iconval = 2
+                    ) : (acc+brake) > 40 ? (
+                        iconval = 3
+                    ) : (acc+brake) > 20 ? (
+                        iconval = 4
+                    ) : (
+                        iconval = 5
+                    )}
                     IconContainerComponent={IconContainer} readOnly 
                     />
                 </div>

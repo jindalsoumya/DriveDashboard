@@ -7,7 +7,7 @@ var date = data.properties.start_time.substring(0,10);
 var days= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var day = new Date(data.properties.start_time);
 day = days[day.getDay()];
-var time = data.properties.start_time.substring(11);
+var time = data.properties.start_time.substring(11, 16);
 
 
 class DayNav extends Component{
