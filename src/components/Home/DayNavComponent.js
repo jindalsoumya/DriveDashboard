@@ -14,14 +14,17 @@ class DayNav extends Component{
     render() {
         return (
             <Container className = "daynav-container">
-                {date}  -  {time}
-                <br>
-                </br>
-                <div className = "daynav-day">
-                    Your {day} Drive
+                <div className = "daynav-title">
+                    Trip History
                 </div>
                 <hr>
                 </hr>
+                {date}  -  {time}
+                <br>
+                </br>
+                <div className = "daynav-title">
+                    Your {day} Drive
+                </div>
             </Container>
         )
       }

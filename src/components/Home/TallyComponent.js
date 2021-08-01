@@ -16,8 +16,8 @@ class Tally extends Component{
     render() {
         return (
             <Container className = "tally-container">
-                <Grid container spacing={3}>
-                    <Grid item xs={6} sm={3}>
+                <Grid container className = "tally-container">
+                    <Grid item xs={4}>
                         <span className = "tally-val">
                             {data.geometry.coordinates.map((item, index, element) => {
                                 if(index < (data.geometry.coordinates.length-1))
@@ -31,7 +31,7 @@ class Tally extends Component{
                         </br>
                         miles
                     </Grid>
-                    <Grid item xs={6} sm={3}>
+                    <Grid item xs={4}>
                         <span className = "tally-val">
                             {data.segment_stats.data.map((item, index) => {
                                 avgSpeed = (avgSpeed + item.speed_mph);
@@ -42,7 +42,7 @@ class Tally extends Component{
                         </br>
                         mph
                     </Grid>
-                    <Grid item xs={6} sm={3}>
+                    <Grid item xs={4}>
                         <span className = "tally-val">
                             {avgTime = parseFloat(((totalDist / avgSpeed)*60)).toFixed(2)}
                         </span>  
@@ -51,8 +51,8 @@ class Tally extends Component{
                         min
                     </Grid>
                 </Grid>
-                <Grid container spacing={3}>
-                    <Grid item xs={6} sm={3}>
+                <Grid container className = "tally-container">
+                    <Grid item xs={4}>
                         <span className = "tally-val">
                             {/* Assume fuel efficiency is 25 mpg */}
                             {gallon = parseFloat((totalDist / 25)).toFixed(2)}
@@ -61,7 +61,7 @@ class Tally extends Component{
                         </br>
                         gallons
                     </Grid>
-                    <Grid item xs={6} sm={3}>
+                    <Grid item xs={4}>
                         <span className = "tally-val">
                             {/* Assume fuel price is $3 */}
                             {price = gallon * 3}
@@ -70,7 +70,7 @@ class Tally extends Component{
                         </br>
                         dollars
                     </Grid>
-                    <Grid item xs={6} sm={3}>
+                    <Grid item xs={4}>
                         <span className = "tally-val">
                             {carbon = parseFloat((gallon * 12.13)).toFixed(2)}
                         </span>  
