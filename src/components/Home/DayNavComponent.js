@@ -10,7 +10,6 @@ var day = new Date(data.properties.start_time);
 day = days[day.getDay()];
 var time = data.properties.start_time.substring(11, 16);
 
-
 class DayNav extends Component{
     render() {
         return (
