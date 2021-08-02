@@ -17,7 +17,6 @@ class DayNav extends Component{
                 <div className = "daynav-title">
                     Trip History
                 </div>
-                
                     <p className = "daynav-digits">
                     {date}  -  {time}
                     </p>
