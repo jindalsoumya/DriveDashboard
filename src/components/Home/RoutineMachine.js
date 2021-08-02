@@ -10,11 +10,11 @@ const createRoutineMachineLayer = (props) => {
   //     L.latLng(item[1], item[0])
   //   }
   // })}
+
   const instance = L.Routing.control({
     waypoints: [
-      L.latLng(33.52001088075479, 36.26829385757446),
-      L.latLng(33.50546582848033, 36.29547681726967),
-      L.latLng(35.50546582848033, 36.29547681726967)
+    L.latLng(33.52001088075479, 36.26829385757446),
+    L.latLng(33.50546582848033, 36.29547681726967)
     ],
     lineOptions: {
       styles: [{ color: "#6FA1EC", weight: 4 }]
@@ -26,7 +26,6 @@ const createRoutineMachineLayer = (props) => {
     fitSelectedRoutes: true,
     showAlternatives: false
   });
-  console.log(instance);
   return instance;
 };
 

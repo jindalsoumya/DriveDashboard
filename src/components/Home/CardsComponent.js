@@ -101,9 +101,9 @@ class Cards extends Component{
                                 <FastForwardIcon fontSize="large"/>
                             }
                             title="Pushing Metal"
-                            className = "card-head"
+                            className = "cards-head"
                         />
-                        <CardContent className = "card-desc">
+                        <CardContent className = "cards-desc">
                             You rapidly accelerated {acc} times in your trip.
                         </CardContent>
                     </Card>
@@ -118,10 +118,10 @@ class Cards extends Component{
                                 <SlowMotionVideoIcon fontSize="large"/>
                             }
                             title="Brakes make Tear"
-                            className = "card-head"
+                            className = "cards-head"
                         />
-                        <CardContent  className = "card-desc">
-                            You braked hard {brake} times in yousr trip.
+                        <CardContent  className = "cards-desc">
+                            You braked hard {brake} times in your trip.
                         </CardContent>
                     </Card>
                 ) : (
