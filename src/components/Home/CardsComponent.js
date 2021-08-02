@@ -104,7 +104,7 @@ class Cards extends Component{
                             className = "cards-head"
                         />
                         <CardContent className = "cards-desc">
-                            You rapidly accelerated {acc} times in your trip.
+                            {acc} rapid acceleration events
                         </CardContent>
                     </Card>
                 ) : (
@@ -121,7 +121,7 @@ class Cards extends Component{
                             className = "cards-head"
                         />
                         <CardContent  className = "cards-desc">
-                            You braked hard {brake} times in your trip.
+                            {brake} hard braking events
                         </CardContent>
                     </Card>
                 ) : (
