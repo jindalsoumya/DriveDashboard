@@ -2,8 +2,9 @@ import { Component } from  'react';
 import Container from '@material-ui/core/Container'
 import Rating from '@material-ui/lab/Rating';
 import PropTypes from "prop-types";
-import Card from '@material-ui/core/Card'
-import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
 import './CardsStyling.css'
 import data from './data.json'
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
@@ -11,28 +12,28 @@ import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied'
 import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
 import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
-import fast from './fast.svg'; 
-import stop from './stop.svg'; 
+import FastForwardIcon from '@material-ui/icons/FastForward';
+import SlowMotionVideoIcon from '@material-ui/icons/SlowMotionVideo';
 
 const customIcons = {
     1: {
-      icon: <SentimentVeryDissatisfiedIcon />,
+      icon: <SentimentVeryDissatisfiedIcon fontSize="large"/>,
       label: 'Very Dissatisfied',
     },
     2: {
-      icon: <SentimentDissatisfiedIcon />,
+      icon: <SentimentDissatisfiedIcon fontSize="large"/>,
       label: 'Dissatisfied',
     },
     3: {
-      icon: <SentimentSatisfiedIcon />,
+      icon: <SentimentSatisfiedIcon fontSize="large"/>,
       label: 'Neutral',
     },
     4: {
-      icon: <SentimentSatisfiedAltIcon />,
+      icon: <SentimentSatisfiedAltIcon fontSize="large"/>,
       label: 'Satisfied',
     },
     5: {
-      icon: <SentimentVerySatisfiedIcon />,
+      icon: <SentimentVerySatisfiedIcon fontSize="large"/>,
       label: 'Very Satisfied',
     },
 };
@@ -91,22 +92,20 @@ class Cards extends Component{
                     ) : (
                         iconval = 5
                     )}
-                    IconContainerComponent={IconContainer} readOnly 
-                    />
+                    IconContainerComponent={IconContainer} readOnly/>
                 </div>
                 {acc ? (
                     <Card className = "cards-card">
-                        <Grid container>
-                            <Grid item xs={4}>
-                                <img src = {fast} className = "cards-image"></img>
-                            </Grid>
-                            <Grid item xs={8} className = "card-head">
-                                Pushing the metal
-                            </Grid>
-                            <Grid item xs={12} className = "card-desc">
-                                You rapidly accelerated {acc} times in your trip.
-                            </Grid>
-                        </Grid>
+                        <CardHeader
+                            avatar={
+                                <FastForwardIcon fontSize="large"/>
+                            }
+                            title="Pushing Metal"
+                            className = "card-head"
+                        />
+                        <CardContent className = "card-desc">
+                            You rapidly accelerated {acc} times in your trip.
+                        </CardContent>
                     </Card>
                 ) : (
                     <div>
@@ -114,17 +113,16 @@ class Cards extends Component{
                 )}
                 {brake ? (
                     <Card className = "cards-card">
-                        <Grid container>
-                            <Grid item xs={4}>
-                                <img src = {stop} className = "cards-image"></img>
-                            </Grid>
-                            <Grid item xs={8} className = "card-head">
-                                Brakes make tear
-                            </Grid>
-                            <Grid item xs={12} className = "card-desc">
-                                You braked hard {brake} times in your trip.
-                            </Grid>
-                        </Grid>
+                        <CardHeader
+                            avatar={
+                                <SlowMotionVideoIcon fontSize="large"/>
+                            }
+                            title="Brakes make Tear"
+                            className = "card-head"
+                        />
+                        <CardContent  className = "card-desc">
+                            You braked hard {brake} times in yousr trip.
+                        </CardContent>
                     </Card>
                 ) : (
                     <div>
